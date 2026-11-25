@@ -1,7 +1,7 @@
 schema_version: 1
 
 context:
-  version: "0.21.0"
+  version: "0.22.0"
 
 recipe:
   name: jupyter-ai-lite
@@ -16,7 +16,7 @@ outputs:
       name: jupyter-ai-agent-lite
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai-agent-lite/jupyter_ai_agent_lite-${{ version }}.tar.gz
-      sha256: bd697d919ecb1ff90bd2b1fdb46c70f312ed0f19308e2dac92c046473564aeef
+      sha256: 90ff703ce05a0a7aab93b0f26f0a4221f1d3009298dd41909fb2285a6d3bf67f
     build:
       noarch: python
       script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -54,7 +54,7 @@ outputs:
       name: jupyternaut-lite
     source:
       url: https://pypi.org/packages/source/j/jupyternaut-lite/jupyternaut_lite-${{ version }}.tar.gz
-      sha256: 135a4d4e8240ef523d9014dc27bc2a053268ec61f5cfac528cf471c893126066
+      sha256: 40c13c20673bfa08f0bc481941086c4af2ccc1f7208f9dadd99656dadd1acc5b
     build:
       noarch: python
       script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
@@ -68,12 +68,12 @@ outputs:
       run:
         - python >=${{ python_min }}
         - ${{ pin_subpackage("jupyter-ai-agent-lite", exact=True) }}
-        - jupyter-ai-persona-manager >=0.3.0a0,<0.4
+        - jupyter-ai-persona-manager >=0.4.0,<0.5
         - jupyter-chat-components >=0.7.0,<0.8
         - jupyter-mcp-manager >=0.2.0,<0.3
         - jupyter-secrets-manager >=0.5,<0.6
         - jupyterlab-ai-commands >=0.4.0,<0.5
-        - jupyterlab-chat >=0.25.2,<0.26
+        - jupyterlab-chat >=0.26.0,<0.27
     tests:
       - python:
           python_version:
@@ -98,7 +98,7 @@ outputs:
       name: jupyter-ai-lite
     source:
       url: https://pypi.org/packages/source/j/jupyter-ai-lite/jupyter_ai_lite-${{ version }}.tar.gz
-      sha256: 5015bead1984f160070e4b785af82f04d37e47cc904eba0688244212395efbfd
+      sha256: 1c4b343e9dc6a96fc2726a27444fc16195957ff770eb318a37433e5ccad822c7
     build:
       noarch: python
       script: ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
